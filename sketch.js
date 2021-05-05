@@ -3,6 +3,8 @@ const World = Matter.World;
 const Bodies = Matter.Bodies;
 const Body = Matter.Body;
 const Constraint = Matter.Constraint;
+const Mouse = Matter.Mouse;
+const MouseConstraint = Matter.MouseConstraint;
 
 var bob1, bob2,bob3,bob4,bob5;
 var Roof;
@@ -65,5 +67,13 @@ function draw() {
  
 }
 
+function keyPressed() {
+	if (keyCode === UP_ARROW) {
+		Matter.Body.applyForce(bob1.body,bob1.body.position,{x:-85,y:0});
+	}
 
+	if (keyCode === DOWN_ARROW) {
+		Matter.Body.applyForce(bob5.body,bob5.body.position,{x:85,y:0});
+	}
+}
 
